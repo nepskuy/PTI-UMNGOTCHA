@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    margin-top: 50px;
+    background-color: rgb(163, 128, 31);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Press Start 2P', cursive;
+    margin-bottom: 50px;
+    font-size:20px;
+    align-content: center;
+    height: 100%;
+  }
+
+#space
+{
+width:  1%;    
+border-radius: 10px;
+}
+
+
+#line
+{
+    height: 15px;
+    color: rgb(49, 49, 49);
+    border-radius: 10px;
+    width: 100%;
+    margin: auto;
+}
+
+.container
+{
+    margin-top: auto;
+    border-radius: 50px;
+    background-color: rgba(117, 223, 250, 0.6);
+    height: 80%;
+    width: 60%;
+    align-content: center;
+    align-items: center;
+}
+
+
+.bgBox{
+    border-radius:50%;
+    width: auto;
+    background-color: hsl(34, 50%, 50%);
+}
+
+#avatars
+{
+    align-items: center;
+    margin: auto;
+}
+
+.carousel-inner img 
+{
+    margin: auto;
+}
+
+
+#myName
+{
+    background-color:rgb(9, 247, 255);
+    text-align: center;
+}
+
+.myName {
+    max-width: 300px;
+    background-color:rgb(255, 187, 0);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+footer
+{   align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    text-align: center;
+    height: auto;
+    flex: 1;
+    padding:20px 20px;
+}
+
+.arrow {
+    display: inline-block;
+    margin: 20px 20px;
+}
+
+.arrow img {
+    width: 40px;
+}
+
+.avatar {
+    width: 25%;
+}
+
+.form-group {
+    width: 50%;
+}
+
+
+
+.form-control {
+    text-align: center;
+    width:20px;
+}
+
+a {
+  color: rgb(0, 255, 136);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(255, 217, 0);
+}

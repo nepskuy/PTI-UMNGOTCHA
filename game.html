@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<title>UMNGotcha</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet"  href="style.css" />
+	<script src="https://kit.fontawesome.com/9d53a2f771.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+ 
+
+
+</head>
+
+<body onload="startTime();">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col text-center mt-4">
+
+                <hr id="line">
+
+                <i class='fas fa-cat' style='font-size:48px;color:rgb(131, 36, 36)'></i>
+                <i class='fas fa-paw' style='font-size:48px;color:rgb(0, 0, 0)'></i>
+                <i class='fas fa-dog' style='font-size:48px;color:rgb(255, 208, 0)'></i>
+                
+
+                <hr id="line">
+
+                <p>UTS</p>
+             
+                    <div id="umnLife">
+                        <div>
+                            <p class="text-center">UMNGotcha</p>
+                        </div>
+                    </div>
+                <div class="row justify-content-center">
+                 
+                </div>
+            </div>
+        </div>
+        <p class="text-center"> Waktu bermain anda :</p>
+
+        <div class="text-center" id="time"></div>
+        <div class="container-fluid text-center">
+            <div class="w-50 mx-auto my-4">
+                <div class="p-5 mb-4 rounded-10 bgBox">
+                    <div class="row">
+                        <div class="text-center" class="col-md-7">
+                       
+                            <label for="eat"><i class='fas fa-hamburger' style='font-size:24px'></i></label>
+                            <progress id="eat" value="5" max="10"></progress>
+                        </div>
+                        <div class="text-center" class="col-md-7">
+                            <label for="sleep"><i class="fa-solid fa-bed fa-xl"style='font-size:20px'></i></label>
+                            <progress id="sleep" value="5" max="10"></progress>
+                        </div>
+                        <div class="text-center" class="col-md-7">
+                            <label for="play"><i class="fa-solid fa-gamepad fa-lg"style='font-size:20px'></i></label>
+                            <progress id="play" value="5" max="10"></progress>
+                        </div>
+                        <div class="text-center" class="col-md-7">
+                            <label for="cure"><i class='fas fa-hospital' style='font-size:20px'></i></label>
+                            <progress id="cure" value="0" max="10"></progress>
+                        </div>
+                     
+                        <div class="col-md-12">
+                            <h4 class="mt-3">level <span id="level">1</span></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid section-chara mt-4 mb-2 text-center">
+            <h2><span id="greeting"></span><span id="username"></span></h2>
+            <input type="text" id="play-animal" style="display: none;">
+           <p class="text-center"> Peliharaanmu :</p>
+            <img id="play-char" class="avatar">
+        </div>
+        <div class="gap-2 d-flex flex-column justify-content-center align-items-center mt-4">
+            <div class="row">
+                <div class="col-md-6 d-grid mx-auto mb-2">
+                    <button id="btn-1" class="btn btn-sm rounded-pill bgBox" onclick="eating(); setTimeout(makan, 5000); btnMiss();"><span><i class='fas fa-hamburger' style='font-size:20px'></i></span> Makan</button>
+                </div>
+                <div class="col-md-6 d-grid mx-auto mb-2">
+                    <button id="btn-2" class="btn btn-sm rounded-pill bgBox" onclick="sleeping(); setTimeout(tidur, 15000); btnMiss();"><span><i class="ms-2 fa-solid fa-bed mx-1" style='font-size:20px'></i></span>Tidur</button>
+                </div>
+                <div class="col-md-6 d-grid mx-auto mb-2">
+                    <button id="btn-3" class="btn btn-sm rounded-pill bgBox" onclick="playing(); setTimeout(main, 4000); btnMiss();"><span><i class="ms-2 fa-solid fa-gamepad mx-1" style='font-size:20px'></i></span>Bermain</button>
+                </div>
+                <div class="col-md-6 d-grid mx-auto mb-2">
+                    <button id="btn-4" class="btn btn-sm rounded-pill bgBox" onclick="cure(); setTimeout(berobat, 6500); btnMiss();"><span><i class='fas fa-hospital' style='font-size:20px'></i></span> Berobat</button>
+                </div>
+
+              
+            </div>
+        </div>
+        
+
+        <footer>	
+			<hr id="line">
+
+        <i class='fas fa-cat' style='font-size:48px;color:rgb(131, 36, 36)'></i>
+        <i class='fas fa-paw' style='font-size:48px;color:rgb(0, 0, 0)'></i>
+        <i class='fas fa-dog' style='font-size:48px;color:rgb(255, 208, 0)'></i>
+       
+
+        <hr id="line">
+		</footer>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+<script>
+    document.getElementById("username").innerHTML = name;
+    document.getElementById("play-animal").value = localStorage.getItem("hewan");
+
+    var karakterHewan = document.getElementById("play-animal").value;
+    if (karakterHewan == "anjing") {
+        document.getElementById("play-char").src="assets/anjing.png";
+    } else if (karakterHewan == "kucing") {
+        document.getElementById("play-char").src="assets/kucing.png";
+    }
+
+    const timer = document.getElementById("time");
+
+	var getTime = new Date();
+	var hour = getTime.getHours();
+	var minute = getTime.getMinutes();
+	var stopTime = true;
+
+    function startTime() {
+        minute = parseInt(minute);
+        hour = parseInt(hour);
+
+        minute = minute + 1;
+
+        if (minute == 60) {
+            hour = hour + 1;
+            minute = 0;
+        }
+
+        if (minute < 10 || minute == 0) {
+            minute = '0' + minute;
+        }
+        if (hour < 10 || hour == 0) {
+            hour = '0' + hour;
+        }
+        if (hour > 23) {
+            hour = '00';
+        }
+
+        timer.innerHTML = hour + ':' + minute;
+
+        setTimeout("startTime()", 1000);
+    }
+
+    $(document).ready(function() {
+        function greeting() {
+            if (hour < 6) {
+                $("#greeting").html("Malam, ");
+                document.body.style.backgroundImage = "url(assets/malam.png)";
+            } else if (hour < 11) {
+                $("#greeting").html("Pagi, ");
+                document.body.style.backgroundImage = "url(assets/pagi.png)";
+            } else if (hour < 15) {
+                $("#greeting").html("Siang, ");
+                document.body.style.backgroundImage = "url(assets/siang.png)";
+            } else if (hour < 18) {
+                $("#greeting").html("Sore, ");
+                document.body.style.backgroundImage = "url(assets/sore.png)";
+            } else {
+                $("#greeting").html("Malam, ");
+                document.body.style.backgroundImage = "url(assets/malam.png)";
+            }
+        }
+        setInterval(greeting, 0);
+    });
+
+    function eating() {
+		if (karakterHewan == "anjing") {
+			document.getElementById("play-char").src = "assets/dogfood.png"
+		} else {
+			document.getElementById("play-char").src = "assets/catfood.png"
+		}
+	}
+    function makan() {
+        document.getElementById("eat").value += 5;
+        document.getElementById("sleep").value -= 0.2;
+        document.getElementById("play").value -= 0.2;
+        document.getElementById("cure").value -= 0;
+ 
+        document.getElementById("btn-1").disabled = false;
+        document.getElementById("btn-2").disabled = false;
+        document.getElementById("btn-3").disabled = false;
+        document.getElementById("btn-4").disabled = false;
+     
+        defaultCharacter();
+    }
+    setInterval(lapar, 8000);
+    function lapar() {
+        document.getElementById("eat").value -= 0.5;
+
+        if(document.getElementById("eat").value <=1) {
+            window.alert("Avatarmu lapar, kasih makan!");
+        }
+    }
+
+    function sleeping() {
+		if (karakterHewan == "anjing") {
+			document.getElementById("play-char").src = "assets/sleepdog.png"
+		} else {
+			document.getElementById("play-char").src = "assets/sleepcat.png"
+		}
+	}
+    function tidur() {
+        document.getElementById("eat").value -= 0.2;
+        document.getElementById("sleep").value += 10;
+        document.getElementById("play").value -= 0.2;
+        document.getElementById("cure").value -= 0;
+   
+
+        document.getElementById("btn-1").disabled = false;
+        document.getElementById("btn-2").disabled = false;
+        document.getElementById("btn-3").disabled = false;
+        document.getElementById("btn-4").disabled = false;
+      
+        defaultCharacter();
+    }
+    setInterval(ngantuk, 15000);
+    function ngantuk() {
+        document.getElementById("sleep").value -= 0.5;
+        
+        if(document.getElementById("sleep").value <= 1) {
+            window.alert("Avatarmu lelah, segera tidur!");
+        }
+    }
+
+    
+    function playing() {
+		if (karakterHewan == "anjing") {
+			document.getElementById("play-char").src = "assets/playdog.png"
+		} else {
+			document.getElementById("play-char").src = "assets/playcat.png"
+		}
+	}
+    function main() {
+        document.getElementById("eat").value -= 0.2;
+        document.getElementById("sleep").value -= 0.2;
+        document.getElementById("play").value += 5;
+        document.getElementById("cure").value -= 0.2;
+
+        
+        document.getElementById("btn-1").disabled = false;
+        document.getElementById("btn-2").disabled = false;
+        document.getElementById("btn-3").disabled = false;
+        document.getElementById("btn-4").disabled = false;
+ 
+        defaultCharacter();
+    }
+    
+
+    function cure() {
+		if (karakterHewan == "anjing") {
+			document.getElementById("play-char").src = "assets/curedog.png"
+		} else {
+			document.getElementById("play-char").src = "assets/curecat.png"
+		}
+	}
+    function berobat() {
+        document.getElementById("eat").value -= 0.2;
+        document.getElementById("sleep").value -= 0.2;
+        document.getElementById("play").value -= 0.2;
+        document.getElementById("cure").value += 2.5;
+ 
+        
+        document.getElementById("btn-1").disabled = false;
+        document.getElementById("btn-2").disabled = false;
+        document.getElementById("btn-3").disabled = false;
+        document.getElementById("btn-4").disabled = false;
+
+        defaultCharacter();
+        
+        var level = document.getElementById("level").innerHTML;
+        if(document.getElementById("cure").value >= 10) {
+            var newlevel = parseInt(level,10) + 1;
+            document.getElementById("level").innerHTML = newlevel;
+            window.alert("Selamat Avatarmu telah naik ke level " + newlevel);
+            document.getElementById("cure").value = 0;
+            document.getElementById("eat").value = 5;
+            document.getElementById("sleep").value = 5;
+            document.getElementById("play").value = 5;
+   
+        }
+        if(newlevel == 5){
+            alert("Selamat " + name + " sudah lulus!");
+            if(confirm("Apakah kamu mau main lagi?")){
+                location.reload();
+            }
+            else{
+                window.location.assign("mulaiMain.html");
+            }
+        }
+    }
+    setInterval(sakit, 70000);
+    function sakit() {
+        document.getElementById("cure").value -= 0.5;
+
+        if(document.getElementById("cure").value <=1) {
+            window.alert("Avatarmu sakit, beri obat!");
+        }
+    }
+
+    setInterval(bosan, 9000);
+    function bosan() {
+        document.getElementById("play").value -= 0.5;
+        
+        if(document.getElementById("play").value <=1) {
+            window.alert("Avatarmu bosan, segera kasih avatarmu main!");
+        }
+    }
+    
+    setInterval(gameOver, 1000);
+    function gameOver() {
+        if(document.getElementById("eat").value ==0 && 
+            document.getElementById("sleep").value ==0 && 
+            document.getElementById("play").value ==0 && 
+            document.getElementById("drink").value ==0)
+        {
+            window.alert("Game selesai! Kamu telah gagal memelihara avatarmu!");
+            if(confirm("Apa kamu ingin bermain lagi?")){
+                location.reload();
+            }
+            else{
+                window.location.assign("mulaiMain.html");
+            }
+        }
+    }
+
+    function defaultCharacter() {
+		document.getElementById("play-char").src = "assets/" + karakterHewan + ".png";
+	}
+
+    function btnMiss() {
+        document.getElementById("btn-1").disabled = true;
+        document.getElementById("btn-2").disabled = true;
+        document.getElementById("btn-3").disabled = true;
+        document.getElementById("btn-4").disabled = true;
+    }
+</script>    
+</html>
